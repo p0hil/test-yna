@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build:client": "tsc client.ts --target ES2020 --module ES2015 --lib DOM,ES2020 --skipLibCheck",
+    "build:server": "tsc server.ts --target ES2020 --module commonjs --lib ES2020 --skipLibCheck  --esModuleInterop",
+    "start:server": "yarn build:client && yarn build:server && node server.js"
+  }
+
+}
